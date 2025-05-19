@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dangibson-me": {
+    "DanGibsonMe-alpha": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dangibson-me",
+            "outputPath": "dist/DanGibsonMe-alpha",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,17 +34,21 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -72,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "dangibson-me:build:production"
+              "browserTarget": "DanGibsonMe-alpha:build:production"
             },
             "development": {
-              "browserTarget": "dangibson-me:build:development"
+              "browserTarget": "DanGibsonMe-alpha:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dangibson-me:build"
+            "browserTarget": "DanGibsonMe-alpha:build"
           }
         },
         "test": {
@@ -107,5 +114,5 @@
       }
     }
   },
-  "defaultProject": "dangibson-me"
+  "defaultProject": "DanGibsonMe-alpha"
 }
