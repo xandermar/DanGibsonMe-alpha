@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration production --base-href / && echo alpha.dangibson.me > dist/DanGibsonMe-alpha/CNAME && npx angular-cli-ghpages --dir=dist/DanGibsonMe-alpha",
+    "deploy": "NX_SKIP_NX_CACHE=true ng build --configuration production && echo alpha.dangibson.me > dist/DanGibsonMe-alpha/CNAME && npx angular-cli-ghpages --dir=dist/DanGibsonMe-alpha",
     "postinstall": "node ./decorate-angular-cli.js"
   },
   "private": true,
