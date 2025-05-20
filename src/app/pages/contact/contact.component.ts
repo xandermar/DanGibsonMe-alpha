@@ -24,7 +24,7 @@ export class ContactComponent {
         this.form = { name: '', email: '', message: '' };
       },
       (err) => {
-        alert('Failed to send email.\n' + JSON.stringify(err));
+        console.log('Failed to send email.\n' + JSON.stringify(err));
       }
     );
   }
