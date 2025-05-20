@@ -13,6 +13,9 @@ export class ContactComponent {
     message: '',
   };
 
+  successMessage = '';
+  errorMessage = '';
+
   sendEmail() {
     const serviceID = 'service_dcb64fs';
     const templateID = 'template_762jtji';
@@ -20,11 +23,14 @@ export class ContactComponent {
 
     emailjs.send(serviceID, templateID, this.form, publicKey).then(
       () => {
-        alert('Email sent successfully!');
-        this.form = { name: '', email: '', message: '' };
+        this.successMessage = 'Email sent successfully!';
+        this.errorMessage = '';
+        // this.form = { name: '', email: '', message: '' };
       },
       (err) => {
-        console.log('Failed to send email.\n' + JSON.stringify(err));
+        this.errorMessage = 'Failed to send email. Please try again.';
+        this.successMessage = '';
+        // console.log('Failed to send email.\n' + JSON.stringify(err));
       }
     );
   }
