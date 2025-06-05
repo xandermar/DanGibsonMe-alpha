@@ -1,83 +1,23 @@
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1>Contact</h1>
-        </div>
-    <div class="row mb-3">
-        <div class="col-lg-12">
-        <div class="card">
-        <div class="card-header">
-            <h2>Let's Schedule a Time to Chat!</h2>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title mb-5">Call us at (302) 329-8855 or drop us a note below.</h5>
-
-<!--
-    <form>
-      <div class="mb-3">
-        <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-        <input type="email" class="form-control" id="email" name="email" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
-        <input type="tel" class="form-control" id="phone" name="phone" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="comments" class="form-label">Questions / Comments <span class="text-danger">*</span></label>
-        <textarea class="form-control" id="comments" name="comments" rows="4" required></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form> -->
-
-    <div *ngIf="successMessage" class="alert alert-success" role="alert">
-      {{ successMessage }}
-    </div>
-
-    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
-      {{ errorMessage }}
-    </div>
-
-    <form (ngSubmit)="sendEmail()" #contactForm="ngForm" novalidate>
-
-      <div class="mb-3">
-        <label for="name">Name <span class="required">*</span></label>
-        <input id="name" name="name" class="form-control" [(ngModel)]="form.name" required #name="ngModel">
-        <div *ngIf="name.invalid && name.touched" class="text-danger">Name is required.</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="email">Email <span class="required">*</span></label>
-        <input id="email" name="email" class="form-control" [(ngModel)]="form.email" required email #email="ngModel">
-        <div *ngIf="email.invalid && email.touched" class="text-danger">Valid email is required.</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="message">Message <span class="required">*</span></label>
-        <textarea id="message" name="message" class="form-control" [(ngModel)]="form.message" required #message="ngModel"></textarea>
-        <div *ngIf="message.invalid && message.touched" class="text-danger">Message is required.</div>
-      </div>
-
-      <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send</button>
-    </form>
-
-
-
-
-        </div>
-        </div>
-        </div>
-    </div>
-
-
+<div class="row">
+   <div class="col-lg-12">
+      <h1>Contact</h1>
+   </div>
 </div>
-
-
-
+   <div class="row mb-3">
+      <div class="col-lg-12">
+         <div class="card">
+            <div class="card-header">
+               <h2>Let's Schedule a Time to Chat!</h2>
+            </div>
+            <div class="card-body">
+               <h5 class="card-title mb-5">Call us at (302) 329-8855 or schedule a time to chat below.</h5>
+               <div
+                  class="calendly-inline-widget"
+                  data-url="https://calendly.com/xandermar/general-information"
+                  style="min-width:320px; height:700px;"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

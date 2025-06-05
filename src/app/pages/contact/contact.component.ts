@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import emailjs from '@emailjs/browser';
 
 @Component({
@@ -6,12 +6,19 @@ import emailjs from '@emailjs/browser';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   form = {
     name: '',
     email: '',
     message: '',
   };
+
+  ngOnInit(): void {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+  }
 
   successMessage = '';
   errorMessage = '';
